@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Recipe Catalog</string>
+
+    <string name="back_button_content_description">Back</string>"
+    <string name="popular_recipe_header">Popular Recipes</string>
+    <string name="other_recipe_header">Other Recipes</string>
+    <string name="instructions_header">Instructions</string>
+    <string name="ingredients_header">Ingredients</string>"
+    <string name="cuisine_label">Cuisine: </string>
+    <string name="rating_label">Rating: </string>
+    <string name="difficulty_label">Difficulty: </string>
+    <string name="prep_time_label">Preparation Time: </string>
+    <string name="cook_time_label">Cooking Time: </string>
+
+    <string name="internet_error">Unable to reach the server.\nPlease check your internet connection.</string>
+</resources>
