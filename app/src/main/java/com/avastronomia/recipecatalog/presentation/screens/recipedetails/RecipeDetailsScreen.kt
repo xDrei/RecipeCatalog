@@ -7,12 +7,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -21,9 +18,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -38,6 +32,7 @@ import com.avastronomia.recipecatalog.components.AppToolbar
 import com.avastronomia.recipecatalog.domain.model.Recipe
 import com.avastronomia.recipecatalog.ui.theme.appSizes
 import com.avastronomia.recipecatalog.utils.toTime
+import com.avastronomia.recipecatalog.components.CheckBoxWithText
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -230,30 +225,3 @@ fun ListContentWithCheckBox(
     }
 }
 
-@Composable
-fun CheckBoxWithText(
-    text: String
-) {
-    var checked by remember { mutableStateOf(false) }
-
-    Row(
-        Modifier
-            .fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(MaterialTheme.appSizes.small.smallPadding),
-    ) {
-        Checkbox(
-            modifier = Modifier
-                .height(MaterialTheme.appSizes.medium.checkBoxSize)
-                .width(MaterialTheme.appSizes.medium.checkBoxSize),
-            checked = checked,
-            onCheckedChange = { checked = it }
-        )
-
-        Text(
-            text = text,
-            style = MaterialTheme.typography.bodyLarge.copy(
-                color = MaterialTheme.colorScheme.onBackground
-            )
-        )
-    }
-}
