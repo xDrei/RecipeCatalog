@@ -37,7 +37,7 @@ class ExtensionsTest {
 
     @Test
     fun toTimeReturnsEmptyString() {
-        assertEquals("", 0.toTime())
+        assertEquals("N/A", 0.toTime())
     }
 
     @Test

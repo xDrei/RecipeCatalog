@@ -11,4 +11,11 @@ object AppConstants {
 
     const val RECIPE_ID = "recipeId"
     const val RECIPE_NAME = "recipeName"
+
+    const val HOUR = " hour"
+    const val HOURS = " hours"
+    const val MINUTE = " minute"
+    const val MINUTES = " minutes"
+    const val NOT_APPLICABLE = "N/A"
+    const val AND = " and "
 }

@@ -3,20 +3,29 @@ package com.avastronomia.recipecatalog.utils
 import com.avastronomia.recipecatalog.components.RecipeCardData
 import com.avastronomia.recipecatalog.components.RecipeTileData
 import com.avastronomia.recipecatalog.domain.model.Recipe
+import com.avastronomia.recipecatalog.utils.AppConstants.AND
+import com.avastronomia.recipecatalog.utils.AppConstants.HOUR
+import com.avastronomia.recipecatalog.utils.AppConstants.HOURS
+import com.avastronomia.recipecatalog.utils.AppConstants.MINUTE
+import com.avastronomia.recipecatalog.utils.AppConstants.MINUTES
 
 fun Int.toTime(): String {
+    if (this == 0) {
+        return "N/A"
+    }
+
     val hours = this / 60
     val minutes = this % 60
 
-    val minutesLabel = if (minutes == 1) " minute" else " minutes"
+    val minutesLabel = if (minutes == 1) MINUTE else MINUTES
     val stringBuilder = StringBuilder()
 
     if (hours > 0) {
-        val hoursLabel = if (hours == 1) " hour" else " hours"
+        val hoursLabel = if (hours == 1) HOUR else HOURS
         stringBuilder.append(hours)
         stringBuilder.append(hoursLabel)
         if (minutes > 0) {
-            stringBuilder.append(" and ")
+            stringBuilder.append(AND)
         }
     }
     if (minutes > 0) {
